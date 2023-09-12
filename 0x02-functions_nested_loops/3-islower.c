@@ -2,27 +2,19 @@
 
 /**
   * _islower - checks for lowercase character
+  * @c: character
   * Return: 1 if character is lowercase and 0 otherwise
   */
 
 int _islower(int c)
 {
-	char loweralpha;
-
-	loweralpha = 'a';
-	while(loweralpha <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
-		if (c == loweralpha)
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
-		loweralpha++;
+		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 	_putchar('\n');
-
-	return (0);
 }
