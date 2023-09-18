@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
   * main - prints fizzbuzz numbers from 1 to 100
@@ -15,6 +16,9 @@ int main(void)
 		if (numbers % 3 == 0 && numbers % 5 == 0)
 		{
 			printf("FizzBuzz ");
+
+			if (numbers < 100)
+				printf(" ");
 		}
 		else if (numbers % 3 == 0)
 		{
