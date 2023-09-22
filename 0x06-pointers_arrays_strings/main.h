@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
+
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
