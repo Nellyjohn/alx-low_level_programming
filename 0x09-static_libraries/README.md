@@ -1,1 +1,1 @@
-# **Solutions to C - Static libraries**
+# **Solution to C - Static libraries**
