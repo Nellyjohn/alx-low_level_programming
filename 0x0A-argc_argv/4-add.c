@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	int argcount = 0;
 	int argcharacter = 0;
 
-	argcount = 1
+	argcount = 1;
 	while (argcount < argc)
 	{
 		argcharacter = 0;
