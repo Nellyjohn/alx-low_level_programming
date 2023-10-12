@@ -1,28 +1,33 @@
 #include "function_pointers.h"
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char **argv)
 {
-	int (*calc_ptr_arr[])(int, int);
-	char operator;
-	int num1, num2, result;
+	int (*calc)(int, int);
+	char operator = argv[2][0];
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[3]);
+	int result;
 
-	printf("Enter Choice: 0 for add, 1 for subtract, 2 for multiply,
-			3 for division and 4 for remainder\n");
-	scanf("%d", &operator);
-
-	if (operator > 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	if (!operator)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	(calc_ptr_arr[operator])(num1, num2);
+	if (operator != '+' || operator != '-' || operator != '*' || operator != '/' || operator != '%')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((operator == '/' || operator == '%') && num2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	result = (*calc)(num1, num2);
+	printf("%d\n", result);
 
 	return (0);
 }
