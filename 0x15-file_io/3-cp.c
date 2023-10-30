@@ -36,17 +36,19 @@ void copy_file(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-
-	if (file_to != NULL)
-	{
-		fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-		if (fd_to == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
-			exit(98);
-		}
-	}
-
+	/*
+	 * if (file_to != NULL)
+	 * {
+	*/
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	/*
+	  *if (fd_to == -1)
+	 *	{
+	 *		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+	 *		exit(98);
+	 *	}
+	 *}
+	 */
 	while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
